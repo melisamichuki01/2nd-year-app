@@ -17,31 +17,13 @@ if(!isset($_SESSION['Client_Name'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>User page</title>
+   
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-
-
-   <header class="header">
-
-        <a href="#" class="logo"> <i class="fas fa-users"></i> WEvolve </a>
-
-        <nav class="navbar">
-         <a href="index.php">Home</a>
-         <a href="">About</a>
-         <a href="">Contact</a>
-         <a href="">Volunteer</a>
-         <a href="logout.php">Logout</a>
-        </nav>
-
-        <div id="menu-btn" class="fas fa-bars"></div>
-
-    </header>
-
-</header>
    
    <div class="container">
 

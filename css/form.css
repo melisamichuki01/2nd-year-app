@@ -1,0 +1,47 @@
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    padding-bottom: 60px;
+    background: #eee;
+ }
+ .form-container .form{
+    width: 30rem;
+    height: 40rem;
+    background-color: #222227;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+ }
+.form-container .form p{
+        color: #6BAF92;
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        margin-bottom: 1rem;
+}
+
+
+label {
+    line-height: 5px;
+    font-size: 25px;
+    color: #6BAF92;
+    display: block;
+}
+
+input[type="radio"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}

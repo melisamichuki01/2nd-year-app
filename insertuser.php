@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
       }else{
          $insert = "INSERT INTO users (UserName,Email,UserType,Password) VALUES ('$UserName','$Email','$UserType','$Password')";
          mysqli_query($con, $insert);
-         header('location:login.php');
+         header('location:displayusers.php');
         
       }
    }
@@ -37,38 +37,20 @@ if(isset($_POST['submit'])){
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Login / Sign Up Form</title>
+    <title>New User</title>
     <!--Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <link rel="stylesheet" href="css\login.css">
 </head>
 <body>
-    <!--header section starts-->
-    <header class="header">
-
-        <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
-        <nav class="navbar">
-          <a href="index.php">Home</a>
-          <a href="">About</a>
-          <a href="">Contact</a>
-          <a href="">Volunteer</a>
-          <a href="login.php">Login</a>
-          <a href="signup.php">Sign Up</a>
-
-          
-        </nav>
-
-        <div id="menu-btn" class="fas fa-bars"></div>
-  
-    </header>
-    <!--header ends-->
+    
     <!--login section starts  -->
 
     <div class="form-container">
 
         <form action="" method="post">
-                <h3>Add User</h3>
+                <h3>New User</h3>
                 <?php
                 if(isset($error)){
                     foreach($error as $error){
@@ -76,22 +58,20 @@ if(isset($_POST['submit'])){
                     };
                 };
                 ?>
-                <input type="text" name="UserName" required placeholder="Enter your name">
-                <input type="email" name="Email" required placeholder="Enter your email">
+                <input type="text" name="UserName" required placeholder="Enter  name">
+                <input type="email" name="Email" required placeholder="Enter  email">
                 <select name="UserType">
-                    <option value="" disabled selected>Sign Up as a</option>
-                    <option value="Client">Client</option>
-                    <option value="Therapist">Therapist</option>
+                    <option value="" disabled selected>Register as a</option>
+                    <option value="Client">Admin</option>
+                    <option value="Therapist">Client</option>
+                    <option value="Admin">Therapist</option>
                 </select>
-                <input type="password" name="Password" required placeholder="Enter your password">
-                <input type="password" name="CPassword" required placeholder="Eonfirm your password">
-                <input type="submit" name="submit" value="register now" class="form-btn">
-                <p>Already have an account? <a href="login.php">login now</a></p>
+                <input type="password" name="Password" required placeholder="Enter  password">
+                <input type="password" name="CPassword" required placeholder="Confirm  password">
+                <input type="submit" name="submit" value="submit" class="form-btn">
             </form>
 
     </div>
 
     <!--login section ends-->
-
-    <script src="js\script.js"></script>
 </body>

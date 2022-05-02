@@ -16,28 +16,13 @@ if(!isset($_SESSION['Therapist_Name'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>User page</title>
+   <title>Therapist page</title>
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-   <header class="header">
-
-      <a href="#" class="logo"><i class="fa-solid fa-people-group">WEvolve.</i></a>
-      <nav class="navbar">
-         <a href="index.php">Home</a>
-         <a href="">About</a>
-         <a href="">Contact</a>
-         <a href="">Volunteer</a>
-         <a href="logout.php">Logout</a>
-         
-      </nav>
-
-      <div id="menu-btn" class="fas fa-bars"></div>
-
-   </header>
    
    <div class="container">
 

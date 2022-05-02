@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     if($row['UserType'] == 'Admin')
     {
         $_SESSION['Admin_Name'] = $row['UserName'];
-        header('location:admin_landing.php');
+        header('location:crud\admin_landing.php');
     }elseif($row['UserType'] == 'Client')
     {
         $_SESSION['Client_Name'] = $row['UserName'];
@@ -52,11 +52,11 @@ if(isset($_POST['submit'])){
     <!--header section starts-->
     <header class="header">
 
-        <a href="#" class="logo"><i class="fa-solid fa-people-group">WEvolve.</i></a>
+        <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
         <nav class="navbar">
-          <a href="">Home</a>
+          <a href="index.php">Home</a>
           <a href="">About</a>
-          <a href="">Contact</a>
+          <a href="contact.php">Contact</a>
           <a href="">Volunteer</a>
           <a href="login.php">Login</a>
           <a href="signup.php">Signup</a>

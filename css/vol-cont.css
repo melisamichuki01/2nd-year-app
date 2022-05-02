@@ -122,130 +122,60 @@ section:nth-child(even){
 }
 
 .container{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:20px;
-    padding-bottom: 60px;
- }
- 
- .container .content{
-    text-align: center;
- }
- 
- .container .content h3{
-    font-size: 30px;
-    color:#333;
- }
- 
- .container .content h3 span{
-    background: #207567;
-    color:#fff;
-    border-radius: 5px;
-    padding:0 15px;
- }
- 
- .container .content h1{
-    font-size: 50px;
-    color:#333;
- }
- 
- .container .content h1 span{
-    color:#207567;
- }
- 
- .container .content p{
-    font-size: 25px;
-    margin-bottom: 20px;
- }
- 
- .container .content .btn{
-    display: inline-block;
-    padding:10px 30px;
-    font-size: 20px;
-    background: #333;
-    color:#fff;
-    margin:0 5px;
-    text-transform: capitalize;
- }
- 
- .container .content .btn:hover{
-    background: #6BAF92;
- }
- 
-.form-container{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:20px;
-    padding-bottom: 60px;
-    background: #eee;
- }
- 
-.form-container form{
-    padding:20px;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    background: #fff;
-    text-align: center;
-    width: 500px;
- }
- 
-.form-container form h3{
-    font-size: 30px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    color:#333;
- }
- 
- .form-container form input,
- .form-container form select{
     width: 100%;
-    padding:10px 15px;
-    font-size: 17px;
-    margin:8px 0;
-    background: #eee;
-    border-radius: 5px;
- }
- 
- .form-container form select option{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #16A085;
+}
+
+form{
     background: #fff;
- }
- 
- .form-container form .form-btn{
-    background: #6BAF92;
-    color:#4E9C81;
-    text-transform: capitalize;
-    font-size: 20px;
-    cursor: pointer;
- }
- 
- .form-container form .form-btn:hover{
-    background: #207567;
-    color:#fff;
- }
- 
- .form-container form p{
-    margin-top: 10px;
-    font-size: 20px;
-    color:#333;
- }
- 
- .form-container form p a{
-    color:#207567;
- }
- 
- .form-container form .error-msg{
-    margin:10px 0;
-    display: block;
-    background: #207567;
-    color:#fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+form h1{
+    text-align:center;
+    color: #16A085;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+form input,form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+form button{
+    padding: 15px;
+    background: #aaeed0;
+    color: #fff;
     font-size: 20px;
-    padding:10px;
+    border:0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
  }
+
+form button:hover{
+    background: #16A085;
+    color: #fff;
+}
+
+
 
 
 

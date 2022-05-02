@@ -146,7 +146,7 @@
             <h3>quick links</h3>
             <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> services </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> about </a>
+            <a href="Attachments\Suicide risk assessment scale.pdf"> <i class="fas fa-chevron-right"></i> Resources </a>
             <a href="#"> <i class="fas fa-chevron-right"></i> Volunteer </a>
             <a href="login.php"> <i class="fas fa-chevron-right"></i> book </a>
             <a href="login.php"> <i class="fas fa-chevron-right"></i> Assessments </a>
