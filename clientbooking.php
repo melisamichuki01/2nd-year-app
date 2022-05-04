@@ -8,7 +8,7 @@ if(isset($_SESSION['Client_Name'])){
     $TherapistName =mysqli_real_escape_string($con,$_POST['TherapistName']);
     $Date = $_POST['Date'];
     $Time = $_POST['Time'];
-    $TherapistName =mysqli_real_escape_string($con,$_POST['TherapistName']);
+    $ClientEmail =mysqli_real_escape_string($con,$_POST['ClientEmail']);
   
     $select = "SELECT * FROM `booking` WHERE Date = '$Date' AND Time ='$Time'";
   
@@ -44,11 +44,11 @@ if(isset($_SESSION['Client_Name'])){
 
     <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
     <nav class="navbar">
-        <a href="Userfiles\user_landing.php">Home</a>
-        <a href="Userfiles\therapistview.php">Therapist Available</a>
-        <a href="Userfiles\clientbooking.php">Book Now</a>
-        <a href="Userfiles\viewappointments.php">View Appointments</a>
-        <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
+        <a href="user_landing.php">Home</a>
+        <a href="therapistview.php">Therapist Available</a>
+        <a href="clientbooking.php">Book Now</a>
+        <a href="viewappointments.php">View Appointments</a>
+        <a href="login.php">Logout</a>
       
       
     </nav>
@@ -69,10 +69,10 @@ if(isset($_SESSION['Client_Name'])){
             <select name="TherapistName" id="">
               <option value="" disabled selected >Select Therapist</option>
               <?php
-               $sql = "SELECT * FROM `users` WHERE UserType = 'Therapist'";
+               $sql = "SELECT * FROM `therapist`";
                $result = mysqli_query($con, $sql);
                while($row = mysqli_fetch_assoc($result)){
-                echo '<option value="'.$row['id'].'">'.$row['FirstName'].'</option>';
+                echo '<option value="'.$row['FirstName'].'">'.$row['FirstName'].'</option>';
                }
               ?>       
             <input type="date" name="Date" min="<?php echo date("Y-m-d");?>" required placeholder="Enter your preferred day">

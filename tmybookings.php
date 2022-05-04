@@ -1,7 +1,7 @@
 <?php
 @include 'config\dbcon.php';
 session_start();
-if(!isset($_SESSION['Admin_Name'])){
+if(!isset($_SESSION['Therapist_Name'])){
     header('location:login.php');
  }
 ?>
@@ -20,11 +20,10 @@ if(!isset($_SESSION['Admin_Name'])){
 
     <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
             <nav class="navbar">
-                <a href="Adminfiles\admin_landing.php">View Profile</a>
-                <a href="Adminfiles\displayusers.php">View Users</a>
-                <a href="Adminfiles\insertuser.php"">Insert New User</a>
-                <a href="Adminfiles\viewappointadmin.php">View Appointments</a>
-                <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
+                <a href="therapist_landing.php">Home</a>
+                <a href="">About</a>
+                <a href="therapist_landing.php">View Appointments</a>
+                <a href="logout.php">Logout</a>
 
 
             </nav>
@@ -45,7 +44,7 @@ if(!isset($_SESSION['Admin_Name'])){
             <tbody>
                 <?php
                 
-                $select = "SELECT * FROM booking";
+                $select = "SELECT * FROM booking  where `TherapistName` = '".$_SESSION['Therapist_Name']."' ";
                 $result = mysqli_query($con,$select);
                 
                 if($result){

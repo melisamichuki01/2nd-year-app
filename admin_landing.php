@@ -30,11 +30,11 @@ if(!isset($_SESSION['Admin_Name'])){
 
         <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
             <nav class="navbar">
-                <a href="Adminfiles\admin_landing.php">View Profile</a>
-                <a href="Adminfiles\displayusers.php">View Users</a>
-                <a href="Adminfiles\insertuser.php"">Insert New User</a>
-                <a href="Adminfiles\viewappointadmin.php">View Appointments</a>
-                <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
+                <a href="admin_landing.php">View Profile</a>
+                <a href="displayusers.php">View Users</a>
+                <a href="insertuser.php"">Insert New User</a>
+                <a href="viewappointadmin.php">View Appointments</a>
+                <a href="login.php">Logout</a>
 
             </nav>
 

@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
    $result = mysqli_query($con, $update);
 
    if($result){
-        header('location:Adminfiles\displayusers.php');
+        header('location:displayusers.php');
    }else{
        $error[] = 'could not update,try again';
        die();

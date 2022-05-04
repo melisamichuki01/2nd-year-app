@@ -14,10 +14,10 @@ if(isset($_GET['deleteid'])){
 
     if($result) {
         //echo"Deleted Successfully";
-        header('location:Adminfiles\displayusers.php');
+        header('location:displayusers.php');
     }else{
         echo"An error occurred";
-        header('location:Adminfiles\displayusers.php.php');
+        header('location:displayusers.php.php');
         die();
     }
 }

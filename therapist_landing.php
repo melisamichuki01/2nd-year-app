@@ -28,10 +28,10 @@ if(!isset($_SESSION['Therapist_Name'])){
 
    <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
       <nav class="navbar">
-      <a href="">Home</a>
-      <a href="">About</a>
-      <a href="viewappointments.php">View Appointments</a>
-      <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
+         <a href="therapist_landing.php">View Profile</a>
+         <a href="">About</a>
+         <a href="tmybookings.php">View Appointments</a>
+         <a href="login.php">Logout</a>
 
       </nav>
 

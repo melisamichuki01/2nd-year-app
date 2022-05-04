@@ -23,21 +23,21 @@ if(isset($_POST['submit'])){
         $_SESSION['Admin_Email'] = $row['Email'];
         $_SESSION['Admin_UserType'] = $row['UserType'];
         $_SESSION['Admin_Password'] = $row['Password'];
-        header('location:Adminfiles\admin_landing.php');
+        header('location:admin_landing.php');
     }elseif($row['UserType'] == 'Client')
     {   
         $_SESSION['Client_Name'] = $row['FirstName'];
         $_SESSION['Client_Email'] = $row['Email'];
         $_SESSION['Client_UserType'] = $row['UserType'];
         $_SESSION['Client_Password'] = $row['Password'];
-        header('location:Userfiles\user_landing.php');
+        header('location:user_landing.php');
     }elseif($row['UserType'] == 'Therapist')
     {
         $_SESSION['Therapist_Name'] = $row['FirstName'];
         $_SESSION['Therapist_Email'] = $row['Email'];
         $_SESSION['Therapist_UserType'] = $row['UserType'];
         $_SESSION['Therapist_Password'] = $row['Password'];
-        header('location:Therapistfiles\therapist_landing.php');
+        header('location:therapist_landing.php');
     }
    }else{
        $error[] = 'Incorrect email or pasword!';

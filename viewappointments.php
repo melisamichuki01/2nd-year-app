@@ -20,11 +20,11 @@ if(!isset($_SESSION['Client_Name'])){
 
     <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
             <nav class="navbar">
-            <a href="Userfiles\user_landing.php">Home</a>
-            <a href="Userfiles\therapistview.php">Therapist Available</a>
-            <a href="Userfiles\clientbooking.php">Book Now</a>
-            <a href="Userfiles\viewappointments.php">View Appointments</a>
-            <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
+            <a href="user_landing.php">Home</a>
+            <a href="therapistview.php">Therapist Available</a>
+            <a href="clientbooking.php">Book Now</a>
+            <a href="viewappointments.php">View Appointments</a>
+            <a href="login.php">Logout</a>
 
 
             </nav>
@@ -44,22 +44,25 @@ if(!isset($_SESSION['Client_Name'])){
             
             <tbody>
                 <?php
-                
-                $select = "SELECT * FROM booking";
-                $result = mysqli_query($con,$select);
                 if(isset($_SESSION['Client_Name'])){
-                    if($result){
-                        while($row = mysqli_fetch_assoc($result)){
-                        $TherapistName=$row['TherapistName'];
-                        $Date=$row['Date'];
-                        $Time=$row['Time'];
-                        $created_at=$row['created_at'];
-                        echo'<tr>
-                                <td>'.$TherapistName.'</td>
-                                <td>'.$Date.'</td>
-                                <td>'.$Time.'</td>
-                                <td>'.$created_at.'</td>
-                            </tr>';
+            
+                  
+                    $select = "SELECT * FROM booking where `ClientEmail` = '".$_SESSION['Client_Email']."' ";
+                    $result = mysqli_query($con,$select);
+                    if(isset($_SESSION['Client_Name'])){
+                        if($result){
+                            while($row = mysqli_fetch_assoc($result)){
+                            $TherapistName=$row['TherapistName'];
+                            $Date=$row['Date'];
+                            $Time=$row['Time'];
+                            $created_at=$row['created_at'];
+                            echo'<tr>
+                                    <td>'.$TherapistName.'</td>
+                                    <td>'.$Date.'</td>
+                                    <td>'.$Time.'</td>
+                                    <td>'.$created_at.'</td>
+                                </tr>';
+                            }
                         }
                     }
                 }

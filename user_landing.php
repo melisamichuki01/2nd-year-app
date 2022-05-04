@@ -27,11 +27,11 @@ if(!isset($_SESSION['Client_Name'])){
 
       <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
          <nav class="navbar">
-         <a href="Userfiles\user_landing.php">Home</a>
-         <a href="Userfiles\therapistview.php">Therapist Available</a>
-         <a href="Userfiles\clientbooking.php">Book Now</a>
-         <a href="Userfiles\viewappointments.php">View Appointments</a>
-         <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
+         <a href="user_landing.php">Home</a>
+         <a href="therapistview.php">Therapist Available</a>
+         <a href="clientbooking.php">Book Now</a>
+         <a href="viewappointments.php">View Appointments</a>
+         <a href="login.php">Logout</a>
 
          </nav>
 

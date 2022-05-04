@@ -2,9 +2,10 @@
 @include 'config\dbcon.php';
 session_start();
 
-if(!isset($_SESSION['Client_Name'])){
+if(!isset($_SESSION['Admin_Name'])){
     header('location:login.php');
 }
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ if(!isset($_SESSION['Client_Name'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display Available Therapist</title>
+    <title>Display</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css\view.css">
 </head>
@@ -21,11 +22,11 @@ if(!isset($_SESSION['Client_Name'])){
 
     <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
             <nav class="navbar">
-            <a href="Userfiles\user_landing.php">Home</a>
-            <a href="Userfiles\therapistview.php">Therapist Available</a>
-            <a href="Userfiles\clientbooking.php">Book Now</a>
-            <a href="Userfiles\viewappointments.php">View Appointments</a>
-            <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
+                <a href="admin_landing.php">View Profile</a>
+                <a href="displayusers.php">View Users</a>
+                <a href="insertuser.php"">Insert New User</a>
+                <a href="viewappointadmin.php">View Appointments</a>
+                <a href="C:\xampp\htdocs\2nd year app\login.php">Logout</a>
 
             </nav>
 
@@ -37,27 +38,36 @@ if(!isset($_SESSION['Client_Name'])){
         <table class="greenTable" style="height: 5px;" width="209"> 
             
             <thead>
+                <th>Id</th>
                 <th>FirstName</th>
-                <th>LastName</th>
                 <th>Email</th>
+                <th>UserType</th>
+                <th>Password</th>
+                <th>Operations</th>
             </thead>
             
             
             <tbody>
                 <?php
-                $select = " SELECT * FROM therapist";
+                $select = " SELECT * FROM users ";
                 $result = mysqli_query($con,$select);
 
                 if($result){
                     while($row = mysqli_fetch_assoc($result)){
+                    $id = $row['id'];
                     $FirstName=$row['FirstName'];
-                    $LastName=$row['LastName'];
                     $Email=$row['Email'];
-                    echo'<tr>   
-                            <td>'.$FirstName.'</td>
-                            <td>'.$LastName.'</td>
-                            <td>'.$Email.'</td>                      
-                        </tr>';
+                    $UserType=$row['UserType'];
+                    $Password=$row['Password'];
+                    echo'<tr>
+                                <th scope="row">'.$id.'</th>
+                                <td>'.$FirstName.'</td>
+                                <td>'.$Email.'</td>
+                                <td>'.$UserType.'</td>
+                                <td>'.$Password.'</td>
+                                <td> <button id="btn"> <a href="updateuser.php?updateid='.$id.'">Update</a> </button>
+                                    <button id="btn"> <a href="deleteuser.php?deleteid='.$id.'">Delete</a> <button> </td>
+                            </tr>';
                     }
                 }
 
