@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root{
+    --cyan:#16A085;
+    --black:#444;
+    --light-color:#777;
+    --box-shadow:.5rem .5rem 0 rgba(22, 160, 133, .2);
+    --text-shadow:.4rem .4rem 0 rgba(0, 0, 0, .2);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-transform: capitalize;
+    transition: all .2s ease-out;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+section:nth-child(even){
+    background: #f5f5f5;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    color:var(--black);
+    font-size: 5rem;
+    letter-spacing: .4rem;
+}
+
+.heading span{
+    text-transform: uppercase;
+    color:var(--cyan);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .5rem;
+    padding-left: 1rem;
+    border:var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    color:var(--cyan);
+    cursor: pointer;
+    font-size: 1.7rem;
+    background: #fff;
+}
+
+.btn span{
+    padding:.7rem 1rem;
+    border-radius: .5rem;
+    background: var(--cyan);
+    color:#fff;
+    margin-left: .5rem;
+}
+
+.btn:hover{
+    background: var(--cyan);
+    color:#fff;
+}
+
+.btn:hover span{
+    color: var(--cyan);
+    background:#fff;
+    margin-left: 1rem;
+}
+
+.header{
+    padding:2rem 9%;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.header .logo i{
+    color: var(--cyan);
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover{
+    color: var(--cyan);
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--cyan);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    padding-bottom: 60px;
+ }
+
+.content {
+	width: 1000px;
+	margin: 0 auto;
+}
+.content h2 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 22px;
+	border-bottom: 1px solid #e0e0e3;
+	color: #4a536e;
+}
+.content > p, .content > div {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	margin: 25px 0;
+	padding: 25px;
+	background-color: #fff;
+}
+.content > p table td, .content > div table td {
+	padding: 5px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+	font-weight: bold;
+	color: #4a536e;
+	padding-right: 15px;
+}
+.content > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+
+
+
+/* media queries  */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: initial;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:115%; right: 2rem;
+        border-radius: .5rem;
+        box-shadow: var(--box-shadow);
+        width: 30rem;
+        border: var(--border);
+        background: #fff;
+        transform: scale(0);
+        opacity: 0;
+        transform-origin: top right;
+        transition: none;
+    }
+
+    .header .navbar.active{
+        transform: scale(1);
+        opacity: 1;
+        transition: .2s ease-out;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        display: block;
+        margin:2.5rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}

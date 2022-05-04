@@ -1,5 +1,10 @@
 <?php
 @include 'config\dbcon.php';
+session_start();
+
+if(!isset($_SESSION['Admin_Name'])){
+   header('location:login.php');
+}
 
 if(isset($_GET['deleteid'])){
     $id = $_GET['deleteid'];
@@ -9,10 +14,10 @@ if(isset($_GET['deleteid'])){
 
     if($result) {
         //echo"Deleted Successfully";
-        header('location:displayusers.php');
+        header('location:Adminfiles\displayusers.php');
     }else{
         echo"An error occurred";
-        header('location:displayusers.php');
+        header('location:Adminfiles\displayusers.php.php');
         die();
     }
 }

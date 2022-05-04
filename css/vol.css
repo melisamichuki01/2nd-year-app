@@ -147,7 +147,9 @@ form h1{
     margin-bottom: 20px;
 }
 
-form input,form textarea{
+
+
+form select,form input,form textarea{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -157,24 +159,17 @@ form input,form textarea{
     color: #666;
 }
 
-form button{
-    padding: 15px;
-    background: #aaeed0;
-    color: #fff;
+.form-btn{
+    background: #6BAF92;
+    color:#4E9C81;
+    text-transform: capitalize;
     font-size: 20px;
-    border:0;
-    outline: none;
     cursor: pointer;
-    width: 150px;
-    margin: 20px auto 0;
-    border-radius: 30px;
  }
-
-form button:hover{
-    background: #16A085;
-    color: #fff;
-}
-
+ .form-btn:hover{
+    background: #207567;
+    color:#fff;
+ }
 
 
 

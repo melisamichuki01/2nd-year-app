@@ -14,7 +14,7 @@ function displayRadioValue(){
         }
       }
     }
-    displayresults();
+    
 function displayresults(){
       if(total <= 4){
         res += "Normal range or full remission. The score suggests the patient may not need depression treatment"+ "<br>" 

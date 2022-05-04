@@ -2,35 +2,35 @@
 
 @include 'config\dbcon.php';
 
+$id = $_GET['updateid'];
+$sql = "SELECT * FROM users WHERE id = $id";
+$result=mysqli_query($con, $sql);
+$row= mysqli_fetch_assoc($result);
+$UserName=$row['UserName'];
+$Email=$row['Email'];
+$UserType=$row['UserType'];
+$Password=$row['Password'];
+
 if(isset($_POST['submit'])){
     
    $UserName =mysqli_real_escape_string($con,$_POST['UserName']);
    $Email = mysqli_real_escape_string($con, $_POST['Email']);
    $UserType = mysqli_real_escape_string($con, $_POST['UserType']);
    $Password = mysqli_real_escape_string($con,$_POST['Password']);
-   $CPassword = mysqli_real_escape_string($con,$_POST['CPassword']);
+   
 
-   $select = " SELECT * FROM users WHERE Email = '$Email'";
+   $update = "UPDATE users SET id= $id, UserName= '$UserName',UserType='$UserType', Email='$Email',Password='$Password' WHERE id= $id";
 
-   $result = mysqli_query($con, $select);
+   $result = mysqli_query($con, $update);
 
-   if(mysqli_num_rows($result) > 0){
-    $error[] = 'user already exist!';
-
-   }
-   else{
-       if($Password != $CPassword){
-         $error[] = 'Password not matched!';
-      }else{
-         $insert = "INSERT INTO users (UserName,Email,UserType,Password) VALUES ('$UserName','$Email','$UserType','$Password')";
-         mysqli_query($con, $insert);
-         header('location:displayusers.php');
-        
-      }
+   if($result){
+        header('location:Adminfiles\displayusers.php');
+   }else{
+       $error[] = 'could not update,try again';
+       die();
    }
 
-};
-
+}
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
     <div class="form-container">
 
         <form action="" method="post">
-                <h3>New User</h3>
+                <h3>Update User</h3>
                 <?php
                 if(isset($error)){
                     foreach($error as $error){
@@ -58,17 +58,16 @@ if(isset($_POST['submit'])){
                     };
                 };
                 ?>
-                <input type="text" name="UserName" required placeholder="Enter  name">
-                <input type="email" name="Email" required placeholder="Enter  email">
+                <input type="text" name="UserName" required placeholder="Enter  name" value=<?php echo $UserName;?>>
+                <input type="email" name="Email" required placeholder="Enter  email"value=<?php echo $Email;?>>
                 <select name="UserType">
                     <option value="" disabled selected>Register as a</option>
-                    <option value="Client">Admin</option>
-                    <option value="Therapist">Client</option>
-                    <option value="Admin">Therapist</option>
+                    <option value="Client">Client</option>
+                    <option value="Therapist">Therapist</option>
+                    <option value="Admin">Admin</option>
                 </select>
-                <input type="password" name="Password" required placeholder="Enter  password">
-                <input type="password" name="CPassword" required placeholder="Confirm  password">
-                <input type="submit" name="submit" value="submit" class="form-btn">
+                <input type="password" name="Password" required placeholder="Enter  password" value=<?php echo $Password;?>>
+                <input type="submit" name="submit" value="Update" class="form-btn">
             </form>
 
     </div>

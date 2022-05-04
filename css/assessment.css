@@ -1,0 +1,16 @@
+form{
+    margin: 20px;
+    color: rgb(19, 19, 19);
+}
+
+form p{
+    font-size: 18px;
+    letter-spacing: 0.1rem;
+}
+
+input[type="radio"]{
+    display:inline-flex;
+    align-items:center;
+    cursor: pointer;
+    margin-right: 10px;
+}

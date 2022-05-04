@@ -1,10 +1,12 @@
 <?php
 
 @include 'config\dbcon.php';
+@include 'config\Updatetables.php';
 
 if(isset($_POST['submit'])){
     
-   $UserName =mysqli_real_escape_string($con,$_POST['UserName']);
+   $FirstName =mysqli_real_escape_string($con,$_POST['FirstName']);
+   $LastName =mysqli_real_escape_string($con,$_POST['LastName']);
    $Email = mysqli_real_escape_string($con, $_POST['Email']);
    $UserType = mysqli_real_escape_string($con, $_POST['UserType']);
    $Password = mysqli_real_escape_string($con,$_POST['Password']);
@@ -22,10 +24,10 @@ if(isset($_POST['submit'])){
        if($Password != $CPassword){
          $error[] = 'Password not matched!';
       }else{
-         $insert = "INSERT INTO users (UserName,Email,UserType,Password) VALUES ('$UserName','$Email','$UserType','$Password')";
+         $insert = "INSERT INTO `users` (FirstName, LastName, Email, UserType, Password) VALUES ('$FirstName','$LastName','$Email','$UserType','$Password')";
          mysqli_query($con, $insert);
+         updatetables($FirstName,$LastName,$Email,$UserType);
          header('location:login.php');
-        
       }
    }
 
@@ -68,7 +70,7 @@ if(isset($_POST['submit'])){
     <div class="form-container">
 
         <form action="" method="post">
-                <h3>Add User</h3>
+                <h3>Sign Up</h3>
                 <?php
                 if(isset($error)){
                     foreach($error as $error){
@@ -76,7 +78,8 @@ if(isset($_POST['submit'])){
                     };
                 };
                 ?>
-                <input type="text" name="UserName" required placeholder="Enter your name">
+                <input type="text" name="FirstName" required placeholder="Enter your first name">
+                <input type="text" name="LastName" required placeholder="Enter your last name">
                 <input type="email" name="Email" required placeholder="Enter your email">
                 <select name="UserType">
                     <option value="" disabled selected>Sign Up as a</option>
