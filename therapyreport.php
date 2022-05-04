@@ -1,23 +1,27 @@
 <?php
 
 @include 'config\dbcon.php';
+session_start();
+if(isset($_SESSION['Therapist_Name'])){
+    if(isset($_POST['submit'])){
+        
+    $ClientName =mysqli_real_escape_string($con,$_POST['ClientName']);
+    $TherapistName = mysqli_real_escape_string($con, $_POST['TherapistName']);
+    $TakeAway = mysqli_real_escape_string($con, $_POST['TakeAway']);
 
-if(isset($_POST['submit'])){
-    
-   $ClientName =mysqli_real_escape_string($con,$_POST['ClientName']);
-   $TherapistName = mysqli_real_escape_string($con, $_POST['TherapistName']);
-   $TakeAway = mysqli_real_escape_string($con, $_POST['TakeAway']);
-
-   $insert = "INSERT INTO `takeaways` (`ClientName`, `TherapistName`, `TakeAway`) VALUES ('$ClientName','$TherapistName','$TakeAway')";
-   $result=mysqli_query($con, $insert);
-   if (!$result){
-        echo "An error occurred";
-   }else{
-        echo "Successfully inserted";
-        die();
-   }
-
-};
+    $insert = "INSERT INTO `takeaways` (`ClientName`, `TherapistName`, `TakeAway`) VALUES ('$ClientName','$TherapistName','$TakeAway')";
+    $result=mysqli_query($con, $insert);
+    if (!$result){
+            echo "An error occurred";
+    }else{
+            header('location:therapyreport.php');
+            echo "Inserted Successfully";
+            die();
+    }
+    }
+}else{
+    header('location:login.php');
+}
 ?>
 
 
@@ -37,14 +41,10 @@ if(isset($_POST['submit'])){
 
         <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
         <nav class="navbar">
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="contact.php">Contact</a>
-          <a href="contact.php">Volunteer</a>
-          <a href="login.php">Login</a>
-          <a href="signup.php">Signup</a>
-          
-          
+            <a href="therapist_landing.php">Home</a>
+            <a href="therapyreport.php">Client Reports</a>
+            <a href="tmybookings.php">View Appointments</a>
+            <a href="logout.php">Logout</a>
         </nav>
 
         <div id="menu-btn" class="fas fa-bars"></div>

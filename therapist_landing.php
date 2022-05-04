@@ -28,10 +28,10 @@ if(!isset($_SESSION['Therapist_Name'])){
 
    <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
       <nav class="navbar">
-         <a href="therapist_landing.php">View Profile</a>
-         <a href="">About</a>
+         <a href="therapist_landing.php">Home</a>
+         <a href="therapyreport.php">Client Reports</a>
          <a href="tmybookings.php">View Appointments</a>
-         <a href="login.php">Logout</a>
+         <a href="logout.php">Logout</a>
 
       </nav>
 
@@ -51,7 +51,7 @@ if(!isset($_SESSION['Therapist_Name'])){
 					</tr>
 					<tr>
 						<td>Email:</td>
-						<td><?=$_SESSION['Therapist_Name']?></td>
+						<td><?=$_SESSION['Therapist_Email']?></td>
 					</tr>
                <tr>
 						<td>UserType:</td>

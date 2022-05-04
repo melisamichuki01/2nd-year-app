@@ -29,6 +29,7 @@ if(!isset($_SESSION['Client_Name'])){
          <nav class="navbar">
          <a href="user_landing.php">Home</a>
          <a href="therapistview.php">Therapist Available</a>
+         <a href="viewtakeaways.php">Therapy Reports</a>
          <a href="clientbooking.php">Book Now</a>
          <a href="viewappointments.php">View Appointments</a>
          <a href="login.php">Logout</a>
