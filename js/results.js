@@ -1,4 +1,4 @@
-function displayRadioValue(){
+function displayRV(){
     var ele = document.getElementsByTagName('input');
     let total = 0
     let res = ''
@@ -14,6 +14,7 @@ function displayRadioValue(){
         }
       }
     }
+    displayresults();
     
 function displayresults(){
       if(total <= 4){
@@ -33,4 +34,4 @@ function displayresults(){
       document.getElementById("result").innerHTML = res
   }
 
-  }
+}

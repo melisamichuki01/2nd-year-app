@@ -61,6 +61,12 @@ if(!isset($_SESSION['Client_Name'])){
 						<td>Password:</td>
 						<td><?=$_SESSION['Client_Password']?></td>
 					</tr>
+               <tr>
+                  <td colspan="2" align="right">
+                  <br />
+                     <a href="template.php">Edit Profile</a>
+                  </td>
+               </tr>
 				</table>
 			</div>
    </div>

@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
     <!--header section starts-->
     <header class="header">
 
-        <a href="#" class="logo"><i class="fas fa-users">WEvolve.</i></a>
+        <a href="index.php" class="logo"><i class="fas fa-users">WEvolve.</i></a>
         <nav class="navbar">
           <a href="index.php">Home</a>
           <a href="">About</a>

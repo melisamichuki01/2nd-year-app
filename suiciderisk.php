@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Depression Assessment</title>
-    <link rel="stylesheet" href="css\assessment.css">
+    <title>Depress Assessment</title>
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <div class="container">
@@ -18,6 +18,8 @@
                     <input type="radio"  name="question1" value="1">1
                     <input type="radio"  name="question1" value="2">2
                     <input type="radio"  name="question1" value="3">3
+
+                    <span id="slider"></span>
                     <br>
 
 
@@ -95,11 +97,13 @@
                     <input type="radio" name="question10" value="3">3
                     <br>
 
-                    <button type="button" onclick="displayRadioValue()">Submit</button>
+                    <button type="button" onclick="displayRV()">Submit</button>
 
                     <br>
 
                     <div id="result"></div>
+
+                    <br>
             
         </form>
     </div>

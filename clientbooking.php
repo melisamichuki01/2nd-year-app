@@ -77,7 +77,7 @@ if(isset($_SESSION['Client_Name'])){
               ?>       
             <input type="date" name="Date" min="<?php echo date("Y-m-d");?>" required placeholder="Enter your preferred day">
             <input type="time" name="Time" min="09:00" max="17:00" required placeholder="Enter your preferred time">
-            <input type="email" name="ClientEmail" required placeholder="Please input your Email for communication">
+            <input type="email" name="ClientEmail"  required placeholder="Please input your Email for communication">
             <input type="submit" name="submit" value="Book" class="form-btn">
       </form>
   </div>  

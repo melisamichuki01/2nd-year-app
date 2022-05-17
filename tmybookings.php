@@ -52,12 +52,11 @@ if(!isset($_SESSION['Therapist_Name'])){
                     $TherapistName=$row['TherapistName'];
                     $Date=$row['Date'];
                     $Time=$row['Time'];
-                    $created_at=$row['created_at'];
                     echo'<tr>
                             <td>'.$TherapistName.'</td>
                             <td>'.$Date.'</td>
                             <td>'.$Time.'</td>
-                            <td>'.$created_at.'</td>
+                            <td><button id="btn"> <a href="https://videosdk.live/prebuilt/vsw5-zy3d-n7cj">Join</a> <button></td>
                         </tr>';
                     }
                 }
@@ -65,6 +64,9 @@ if(!isset($_SESSION['Therapist_Name'])){
                 ?>
             </tbody>
         </table>
+    </div>
+    <div class="join">
+        
     </div>
     
 </body>
